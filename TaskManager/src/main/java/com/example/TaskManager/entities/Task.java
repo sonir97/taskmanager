@@ -10,6 +10,7 @@ import org.hibernate.annotations.*;
 
 import java.io.Serializable;
 import java.sql.Types;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
@@ -33,7 +34,7 @@ public class Task implements Serializable {
     @Column(name = "task_title", columnDefinition = "VARCHAR(60)", nullable = false)
     private String title;
 
-    @Column(name = "task_title", columnDefinition = "VARCHAR(255)", nullable = false)
+    @Column(name = "task_desc", columnDefinition = "VARCHAR(255)", nullable = false)
     private String description;
 
     @Column(name = "task_status", nullable = false)
@@ -41,8 +42,7 @@ public class Task implements Serializable {
     private Status status;
 
     @Column(name="task_due_date", nullable = false, columnDefinition = "DATE")
-    @Temporal(TemporalType.DATE)
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
 
     @Column(name="task_created_at", nullable = false, updatable = false, columnDefinition = "TIMESTAMP")
     @CreationTimestamp(source = SourceType.VM)
