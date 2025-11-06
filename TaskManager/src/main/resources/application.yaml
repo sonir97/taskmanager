@@ -17,6 +17,9 @@ spring:
       dialect: org.hibernate.dialect.H2Dialect
     show-sql: true
 
+  jackson:
+    mapper:
+      ACCEPT_CASE_INSENSITIVE_ENUMS: true
 
 server:
   port: 8080
