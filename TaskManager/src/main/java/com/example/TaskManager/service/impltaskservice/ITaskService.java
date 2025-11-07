@@ -135,7 +135,7 @@ public class ITaskService implements TaskService{
                 task.getDueDate().toString(),
                 task.getStatus().toString());
     }
-    public Task convertToEntity(CreateTaskDto newTask){
+    public static Task convertToEntity(CreateTaskDto newTask){
         Task task = new Task();
         task.setTitle(newTask.getTitle());
         task.setDescription(newTask.getDescription());
@@ -158,7 +158,7 @@ public class ITaskService implements TaskService{
         return taskDto;
     }
 
-    public Status computeStatus(String value){
+    public static Status computeStatus(String value){
 
         for(Status status: Status.values()){
             if(status.name().toString().equalsIgnoreCase(value)){
