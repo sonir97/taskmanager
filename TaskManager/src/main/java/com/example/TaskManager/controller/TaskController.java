@@ -36,6 +36,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK).body(tasks);
     }
 
+
     @GetMapping("/id/{id}")
     public ResponseEntity<Object> getTaskById(@PathVariable String id){
         CreateTaskResponseDto task = taskService.getTaskById(id);
